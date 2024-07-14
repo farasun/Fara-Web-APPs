@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小白熊的海上遭遇</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="status-bar">
+        <div class="logo">小白熊的海上遭遇</div>
+        <div class="time" id="current-time"></div>
+    </div>
+    <div class="book">
+        <div id="page1" class="page active">
+            <h1>悠闲的海上时光</h1>
+            <button class="play-button" onclick="toggleSpeech(1)"></button>
+            <img src="images/pic1.png" alt="小白熊在海面划船" class="story-image">
+            <p>小白熊在海面上划船，显得非常愉快和悠闲。阳光明媚，海风轻拂，小白熊脸上洋溢着幸福的笑容。他深深地吸了一口新鲜的海风，觉得生活真是美好！</p>
+            <div class="navigation">
+                <button onclick="changePage(-1)" disabled>上一页</button>
+                <button onclick="changePage(1)">下一页</button>
+            </div>
+        </div>
+
+        <div id="page2" class="page">
+            <h1>神秘的鲨鱼鳍</h1>
+            <button class="play-button" onclick="toggleSpeech(2)"></button>
+            <img src="images/pic2.png" alt="小白熊发现海面出现鲨鱼鳍" class="story-image">
+            <p>突然，小白熊发现海面上出现了鲨鱼鳍！他顿时紧张起来，心跳加速。小白熊紧紧抓住船沿，警惕地观察着周围的情况，不知道接下来会发生什么。</p>
+            <div class="navigation">
+                <button onclick="changePage(-1)">上一页</button>
+                <button onclick="changePage(1)">下一页</button>
+            </div>
+        </div>
+
+        <div id="page3" class="page">
+            <h1>恐慌的时刻</h1>
+            <button class="play-button" onclick="toggleSpeech(3)"></button>
+            <img src="images/pic3.png" alt="鲨鱼鳍绕着小船打圈圈" class="story-image">
+            <p>鲨鱼鳍开始绕着小船打圈圈，小白熊越来越害怕。他的心跳得更快了，手心冒汗，不知道该如何是好。小白熊紧闭双眼，默默祈祷着能够平安无事。</p>
+            <div class="navigation">
+                <button onclick="changePage(-1)">上一页</button>
+                <button onclick="changePage(1)">下一页</button>
+            </div>
+        </div>
+
+        <div id="page4" class="page">
+            <h1>意外的惊喜</h1>
+            <button class="play-button" onclick="toggleSpeech(4)"></button>
+            <img src="images/pic4.png" alt="鲨鱼志愿者和小白熊握手" class="story-image">
+            <p>原来这鲨鱼是打扫海洋垃圾的志愿者，虚惊一场! 鲨鱼摘下了背鳍道具，露出了友善的笑容。小白熊松了一口气，感到既惊讶又开心。他们成为了好朋友，一起清理海洋，保护海洋环境。这次经历让小白熊学到了不要以貌取人的道理。</p>
+            <div class="navigation">
+                <button onclick="changePage(-1)">上一页</button>
+                <button onclick="changePage(1)" disabled>下一页</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

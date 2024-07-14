@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    height: 100%;
+    color: white;
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+.book {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 改为从顶部开始 */
+    padding: 60px 20px 20px; /* 增加顶部内边距，为状态栏留出空间 */
+    box-sizing: border-box;
+}
+.page {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    margin-bottom: 20px; /* 添加底部边距 */
+}
+.page.active {
+    display: block;
+}
+h1 {
+    color: #4ded30;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.story-image {
+    width: 100%;
+    height: auto; /* 让高度自动调整 */
+    max-height: 50vh; /* 最大高度为视口高度的50% */
+    object-fit: contain; /* 保持图片比例 */
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+button {
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+button:disabled {
+    background: #888;
+    cursor: not-allowed;
+}
+.status-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* 确保状态栏在最上层 */
+}
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.time {
+    font-size: 1em;
+}
+.play-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+}
+.play-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+.play-button::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent white;
+}
+.play-button.paused::before {
+    width: 12px;
+    height: 14px;
+    border-style: double;
+    border-width: 0 0 0 12px;
+    border-color: white;
+}
+
+@media (max-width: 600px) {
+    .book {
+        padding-top: 80px; /* 在小屏幕上增加更多顶部内边距 */
+    }
+    h1 {
+        font-size: 1.2em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .story-image {
+        max-height: 40vh; /* 在小屏幕上减小最大高度 */
+    }
+}
